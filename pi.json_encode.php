@@ -16,7 +16,7 @@
 		public function __construct() {
 			$this->EE =& get_instance();
 			$options = ($this->EE->TMPL->fetch_param('options')) ? $this->EE->TMPL->fetch_param('options') : 0;
-			$this->return_data = json_encode($this->EE->TMPL->tagdata, $options);
+			$this->return_data = json_encode(utf8_encode($this->EE->TMPL->tagdata), $options);
 		}
 
 		function usage() {
